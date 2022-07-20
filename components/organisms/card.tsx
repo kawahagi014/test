@@ -9,7 +9,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 
-import { Article } from "../types/article";
+import { Article } from "../../types/article";
 
 type Props = {
   article: Article;

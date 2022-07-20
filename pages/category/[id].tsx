@@ -6,9 +6,9 @@ import { Wrap, WrapItem } from "@chakra-ui/react";
 import { client } from "../../lib/client";
 import { Article } from "../../types/article";
 import { CategoryType } from "../../types/category";
-import Category from "../../organisms/category";
-import Title from "../../organisms/title";
-import Card from "../../organisms/card";
+import Category from "../../components/organisms/category";
+import Title from "../../components/organisms/title";
+import Card from "../../components/organisms/card";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const data = await client.get({ endpoint: "categories" });
