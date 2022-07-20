@@ -1,8 +1,8 @@
 import Link from "next/link";
 import Head from "next/head";
-import { Flex, Heading, Stack, Text } from "@chakra-ui/react";
+import { Heading, Stack, Text } from "@chakra-ui/react";
 
-import Title from "../pages/components/organisms/title";
+import Title from "../organisms/title";
 
 export default function Custom404() {
   return (

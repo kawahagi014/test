@@ -3,12 +3,12 @@ import Link from "next/link";
 import Head from "next/head";
 import { Wrap, WrapItem } from "@chakra-ui/react";
 
-import { client } from "../pages/api/client";
+import { client } from "../lib/client";
 import { Article } from "../types/article";
 import { CategoryType } from "../types/category";
-import Title from "./components/organisms/title";
-import Category from "./components/organisms/category";
-import Card from "./components/organisms/card";
+import Title from "../organisms/title";
+import Category from "../organisms/category";
+import Card from "../organisms/card";
 
 export const getStaticProps: GetStaticProps = async () => {
   const data = await client.get({

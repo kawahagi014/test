@@ -2,7 +2,7 @@ import { NextPage } from "next";
 import Link from "next/link";
 import { Flex, List, ListItem } from "@chakra-ui/react";
 
-import { CategoryType } from "../../../types/category";
+import { CategoryType } from "../types/category";
 
 type Props = {
   categories: Array<CategoryType>;

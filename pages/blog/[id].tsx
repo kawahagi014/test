@@ -2,11 +2,11 @@ import Head from "next/head";
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { Box, Flex, Heading, Img, Stack, Text } from "@chakra-ui/react";
 
-import { client } from "../api/client";
+import { client } from "../../lib/client";
 import { Article } from "../../types/article";
 import { CategoryType } from "../../types/category";
-import Title from "../components/organisms/title";
-import Category from "../components/organisms/category";
+import Title from "../../organisms/title";
+import Category from "../../organisms/category";
 
 type Props = {
   article: Article;
