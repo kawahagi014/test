@@ -5,8 +5,8 @@ import { Box, Flex, Heading, Img, Stack, Text } from "@chakra-ui/react";
 import { client } from "../../lib/client";
 import { Article } from "../../types/article";
 import { CategoryType } from "../../types/category";
-import Title from "../../components/organisms/title";
-import Category from "../../components/organisms/category";
+import { Title } from "../../components/organisms/title";
+import { Category } from "../../components/organisms/category";
 
 type Props = {
   article: Article;

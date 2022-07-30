@@ -1,7 +1,6 @@
-import type { NextPage } from "next";
 import { Box, Heading, Text } from "@chakra-ui/react";
 
-const Title: NextPage = () => {
+export const Title = () => {
   return (
     <Box mt={50} mb={50}>
       <Heading as="h1">Sample Blog</Heading>
@@ -9,4 +8,3 @@ const Title: NextPage = () => {
     </Box>
   );
 };
-export default Title;

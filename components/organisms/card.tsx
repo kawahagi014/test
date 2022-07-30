@@ -1,4 +1,3 @@
-import { NextPage } from "next";
 import {
   Box,
   Divider,
@@ -15,7 +14,7 @@ type Props = {
   article: Article;
 };
 
-const Card: NextPage<Props> = (props) => {
+export const Card = (props: Props) => {
   const { article } = props;
 
   return (
@@ -44,5 +43,3 @@ const Card: NextPage<Props> = (props) => {
     </Box>
   );
 };
-
-export default Card;

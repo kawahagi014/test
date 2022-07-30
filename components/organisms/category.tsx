@@ -1,4 +1,3 @@
-import { NextPage } from "next";
 import Link from "next/link";
 import { Flex, List, ListItem } from "@chakra-ui/react";
 
@@ -8,7 +7,7 @@ type Props = {
   categories: Array<CategoryType>;
 };
 
-const Category: NextPage<Props> = (props) => {
+export const Category = (props: Props) => {
   const { categories } = props;
 
   return (
@@ -25,7 +24,7 @@ const Category: NextPage<Props> = (props) => {
             _before={{ content: `"・"` }}
             _hover={{ cursor: "pointer", opacity: 0.8 }}
           >
-            <Link href={`/category/${category.id}`} key={category.id}>
+            <Link href={`/${category.id}/page/1`}>
               <a>{category.name}</a>
             </Link>
           </ListItem>
@@ -34,5 +33,3 @@ const Category: NextPage<Props> = (props) => {
     </List>
   );
 };
-
-export default Category;
