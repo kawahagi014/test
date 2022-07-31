@@ -15,7 +15,9 @@ type Props = {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const data = await client.get({ endpoint: "blogs" });
-  const paths = data.contents.map((content: any) => `/blog/${content.id}`);
+  const paths = data.contents.map(
+    (content: CategoryType) => `/blog/${content.id}`
+  );
   return { paths, fallback: false };
 };
 

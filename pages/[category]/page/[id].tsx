@@ -14,36 +14,36 @@ import { Pagination } from "../../../components/organisms/pageNation";
 //1ページあたりのページ数
 const perPage = 2;
 
-export const getAllCategoryPagePaths = async () => {
-  const resCategory = await client.get({
-    endpoint: "categories",
-  });
-
-  const paths: string[] = await Promise.all(
-    resCategory.contents.map((item: any) => {
-      const result = client
-        .get({
-          endpoint: "blogs",
-          queries: {
-            filters: `category[equals]${item.id}`,
-          },
-        })
-        .then(({ totalCount }) => {
-          const range = (start: number, end: number) =>
-            [...Array(end - start + 1)].map((_, i) => start + i);
-
-          return range(1, Math.ceil(totalCount / perPage)).map(
-            (val) => `/${item.id}/page/${val}`
-          );
-        });
-      return result;
-    })
-  );
-
-  return paths.flat();
-};
-
 export const getStaticPaths: GetStaticPaths = async () => {
+  const getAllCategoryPagePaths = async () => {
+    const resCategory = await client.get({
+      endpoint: "categories",
+    });
+
+    const paths: string[] = await Promise.all(
+      resCategory.contents.map((item: CategoryType) => {
+        const result = client
+          .get({
+            endpoint: "blogs",
+            queries: {
+              filters: `category[equals]${item.id}`,
+            },
+          })
+          .then(({ totalCount }) => {
+            const range = (start: number, end: number) =>
+              [...Array(end - start + 1)].map((_, i) => start + i);
+
+            return range(1, Math.ceil(totalCount / perPage)).map(
+              (val) => `/${item.id}/page/${val}`
+            );
+          });
+        return result;
+      })
+    );
+
+    return paths.flat();
+  };
+
   const paths = await getAllCategoryPagePaths();
 
   return { paths, fallback: false };
